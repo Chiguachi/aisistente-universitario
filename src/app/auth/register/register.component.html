@@ -1,0 +1,61 @@
+<div class="register-container">
+    <div class="register-card">
+
+        <h1>Crear Cuenta</h1>
+        <p class="subtitle"> Registrate para comenzar </p>
+
+        <form [formGroup]="formregister" (ngSubmit)="RegistrarUsuarios()">
+            <div class="input-group">
+                <label>nombre Completo</label>
+                <input 
+                type="text"
+                formControlName="nombre"
+                placeholder="Ingresa tu Nombre">
+            </div>
+
+            <div class="input-group">
+                <label>Correo Electronico</label>
+                <input 
+                type="email"
+                formControlName="email"
+                placeholder="ejemplo@gmail.com">
+            </div>
+
+            <div class="input-group">
+                <label>contraseña</label>
+                <input 
+                type="password"
+                formControlName="password"
+                placeholder="Minimo 6 Caracteres">
+            </div>
+
+            <div class="input-group">
+                <label>Confirmar Contraseña</label>
+                <input 
+                type="password"
+                formControlName="confirmarPassword"
+                placeholder="Repite tu Contraseña">
+            </div>
+
+            <button type="submit">Registrarse</button>
+            <p class="login-link"> ya tienes una cuenta?
+                <a routerLink="/auth/login">Iniciar Sesion</a>
+            </p>
+        </form>
+
+        <div class="modal-overlay" *ngIf="mostrarExito">
+            <div class="modal-exito">
+                <div class="check-circle">
+                    <svg viewBox="0 0 52 52">
+                        <path class="check-path" d="M14 27 18 8 l16 -16"/>
+                    </svg>
+                </div>
+                <h2>!!! REGISTRO EXITOSO !!!</h2>
+                <P>Tu cuenta fue creada correctamente. <br> te llevamos al inicio de sesion...</P>
+                <div class="barra-progreso"></div>
+        </div>
+
+
+    </div>
+
+</div>
